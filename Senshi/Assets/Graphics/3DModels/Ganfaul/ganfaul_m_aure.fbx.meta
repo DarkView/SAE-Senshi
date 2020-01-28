@@ -3,7 +3,33 @@ guid: e2bde317a8f56e24f941f295bdbe1a49
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ganfaul_Body
+    second: {fileID: 7719580736481561982, guid: e2bde317a8f56e24f941f295bdbe1a49,
+      type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ganfaul_diffuse
+    second: {fileID: 2800000, guid: c941c92d1e59198468cff693c1feaec2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ganfaul_glow
+    second: {fileID: 2800000, guid: 4484ce0fd33a7ff41869b8d03e918412, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ganfaul_normal
+    second: {fileID: 2800000, guid: aa50016940747ad48af7a64f67a7059b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ganfaul_specular
+    second: {fileID: 2800000, guid: ccc7beeb59947d9438e5287edfd951ed, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
