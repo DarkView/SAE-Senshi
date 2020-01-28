@@ -17,7 +17,7 @@ MonoBehaviour:
   m_RenderPipelineRayTracingResources: {fileID: 0}
   m_RenderingPathDefaultCameraFrameSettings:
     bitDatas:
-      data1: 69284264935197
+      data1: 69456063627037
       data2: 4539628424389459968
     lodBias: 1
     lodBiasMode: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     maximumLODLevelMode: 0
   m_RenderingPathDefaultBakedOrCustomReflectionFrameSettings:
     bitDatas:
-      data1: 64881914049309
+      data1: 64942043591453
       data2: 4539628424389459968
     lodBias: 1
     lodBiasMode: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
     maximumLODLevelMode: 0
   m_RenderingPathDefaultRealtimeReflectionFrameSettings:
     bitDatas:
-      data1: 69279803252509
+      data1: 69417242205981
       data2: 4539628424389459968
     lodBias: 1
     lodBiasMode: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
       enabled: 0
       maxPercentage: 100
       minPercentage: 100
-      dynResType: 1
+      dynResType: 0
       upsampleFilter: 1
       forceResolution: 0
       forcedPercentage: 100
@@ -121,7 +121,7 @@ MonoBehaviour:
   shaderVariantLogLevel: 0
   diffusionProfileSettings: {fileID: 0}
   diffusionProfileSettingsList: []
-  m_Version: 5
+  m_Version: 6
   m_ObsoleteFrameSettings:
     overrides: 0
     enableShadow: 0
