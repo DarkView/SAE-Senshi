@@ -4,8 +4,10 @@ using UnityEngine;
 public class PlayerTest : MonoBehaviour
 {
     [SerializeField] private float horizontal;
+    [SerializeField] private int speed;
     private Rigidbody playerRb;
     private Animator playerAnimator;
+
 
     private void Start()
     {
@@ -22,7 +24,7 @@ public class PlayerTest : MonoBehaviour
     void Move()
     {
         horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
-        playerRb.MovePosition(this.transform.position += new Vector3(horizontal,0,0));
+        playerRb.MovePosition(playerRb.position += new Vector3(horizontal,0,0) * speed);
     }
 
     void Attack()
