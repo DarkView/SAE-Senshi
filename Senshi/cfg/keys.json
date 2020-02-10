@@ -1,1 +1,18 @@
-{"P1-Left":97,"P1-Right":100,"P1-Up":119,"P1-Down":115,"P1-LPunch":114,"P1-RPunch":116,"P2-Left":106,"P2-Right":108,"P2-Up":105,"P2-Down":107,"P2-LPunch":260,"P2-RPunch":261}
+{
+  "player1": {
+    "A": 0,
+    "D": 1,
+    "W": 2,
+    "S": 3,
+    "R": 4,
+    "T": 5
+  },
+  "player2": {
+    "J": 0,
+    "L": 1,
+    "I": 2,
+    "K": 3,
+    "Keypad4": 4,
+    "Keypad5": 5
+  }
+}
