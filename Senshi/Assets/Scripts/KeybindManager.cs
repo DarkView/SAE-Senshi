@@ -49,8 +49,8 @@ public class KeybindManager : MonoBehaviour
     {
         keybinds = new Keybindings();
         // Player 1
-        keybinds.player1.Add(KeyCode.A, InputOption.Left);
-        keybinds.player1.Add(KeyCode.D, InputOption.Right);
+        keybinds.player1.Add(KeyCode.A, InputOption.Forward);
+        keybinds.player1.Add(KeyCode.D, InputOption.Backward);
         keybinds.player1.Add(KeyCode.W, InputOption.Up);
         keybinds.player1.Add(KeyCode.S, InputOption.Down);
 
@@ -58,8 +58,8 @@ public class KeybindManager : MonoBehaviour
         keybinds.player1.Add(KeyCode.T, InputOption.RPunch);
 
         // Player 2  InputOption.
-        keybinds.player2.Add(KeyCode.J, InputOption.Left);
-        keybinds.player2.Add(KeyCode.L, InputOption.Right);
+        keybinds.player2.Add(KeyCode.J, InputOption.Forward);
+        keybinds.player2.Add(KeyCode.L, InputOption.Backward);
         keybinds.player2.Add(KeyCode.I, InputOption.Up);
         keybinds.player2.Add(KeyCode.K, InputOption.Down);
 
@@ -162,8 +162,8 @@ public class KeybindManager : MonoBehaviour
     /// </summary>
     public enum InputOption
     {
-        Left = 0,
-        Right,
+        Forward = 0,
+        Backward,
         Up,
         Down,
         LPunch,

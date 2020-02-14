@@ -18,6 +18,16 @@ public class GameManager : MonoBehaviour
     public PlayerController Player2Controller;
 
     /// <summary>
+    /// List containing all buttons currently held down by player 1
+    /// </summary>
+    private List<KeybindManager.InputOption> player1HeldButtons = new List<KeybindManager.InputOption>();
+
+    /// <summary>
+    /// List containing all buttons currently held down by player 2
+    /// </summary>
+    private List<KeybindManager.InputOption> player2HeldButtons = new List<KeybindManager.InputOption>();
+
+    /// <summary>
     /// Cached keybinds for player 1
     /// </summary>
     private Dictionary<KeyCode, KeybindManager.InputOption> player1Keybinds;
@@ -34,7 +44,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Load the Keybind Manager and retrieves current keybinds
     /// </summary>
-    void Start()
+    private void Start()
     {
         Time.timeScale = 1;
         input = transform.GetComponent<KeybindManager>();
@@ -45,7 +55,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Unpauses game and reloads keybinds in case they changed
     /// </summary>
-    void Unpause()
+    private void Unpause()
     {
         player1Keybinds = input.GetPlayerKeybinds(KeybindManager.PlayerOption.Player_1);
         player2Keybinds = input.GetPlayerKeybinds(KeybindManager.PlayerOption.Player_2);
@@ -65,11 +75,20 @@ public class GameManager : MonoBehaviour
                 KeybindManager.InputOption io;
                 if (player1Keybinds.TryGetValue(e.keyCode, out io))
                 {
-                    HandleInput(Player1Controller, io);
-                }
-                else
-                {
-                    Debug.Log("Unknown error in retrieving keybinds");
+                    if (e.rawType == EventType.KeyDown)
+                    {
+                        if (!player1HeldButtons.Contains(io))
+                        {
+                            player1HeldButtons.Add(io);
+                        }
+                    }
+                    else if (e.rawType == EventType.KeyUp)
+                    {
+                        if (player1HeldButtons.Contains(io))
+                        {
+                            player1HeldButtons.Remove(io);
+                        }
+                    }
                 }
             }
             else
@@ -79,14 +98,39 @@ public class GameManager : MonoBehaviour
                     KeybindManager.InputOption io;
                     if (player2Keybinds.TryGetValue(e.keyCode, out io))
                     {
-                        HandleInput(Player2Controller, io);
-                    }
-                    else
-                    {
-                        Debug.Log("Unknown error in retrieving keybinds");
+                        if (e.rawType == EventType.KeyDown)
+                        {
+                            if (!player2HeldButtons.Contains(io))
+                            {
+                                player2HeldButtons.Add(io);
+                            }
+                        }
+                        else if (e.rawType == EventType.KeyUp)
+                        {
+                            if (player2HeldButtons.Contains(io))
+                            {
+                                player2HeldButtons.Remove(io);
+                            }
+                        }
                     }
                 }
             }
+        }
+    }
+
+    /// <summary>
+    /// Handle the input for both held button lists every frame
+    /// </summary>
+    private void Update()
+    {
+        foreach (KeybindManager.InputOption io in player1HeldButtons)
+        {
+            HandleInput(Player1Controller, io);
+        }
+
+        foreach (KeybindManager.InputOption io in player2HeldButtons)
+        {
+            HandleInput(Player2Controller, io);
         }
     }
 
@@ -99,11 +143,11 @@ public class GameManager : MonoBehaviour
     {
         switch (input)
         {
-            case KeybindManager.InputOption.Left:
-                player.MoveLeft();
+            case KeybindManager.InputOption.Forward:
+                player.MoveBackward();
                 break;
-            case KeybindManager.InputOption.Right:
-                player.MoveRight();
+            case KeybindManager.InputOption.Backward:
+                player.MoveForward();
                 break;
             case KeybindManager.InputOption.Up:
                 player.MoveUp();
@@ -121,4 +165,5 @@ public class GameManager : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(input), input, null);
         }
     }
+
 }

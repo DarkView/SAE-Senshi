@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Controls the players movement and attacks
@@ -6,21 +7,27 @@
 /// </summary>
 public class PlayerController : MonoBehaviour, IPlayer
 {
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
 
     /// <summary>
-    /// Moves the player Left
+    /// Moves the player Forward
     /// </summary>
-    public void MoveLeft()
+    public void MoveBackward()
     {
-        Debug.Log("Moving L");
+        transform.Translate(0, 0, (-15f * Time.deltaTime));
     }
     
     /// <summary>
-    /// Moves the player Right
+    /// Moves the player Backward
     /// </summary>
-    public void MoveRight()
+    public void MoveForward()
     {
-        Debug.Log("Moving R");
+        transform.Translate(0, 0, (15f * Time.deltaTime));
     }
     
     /// <summary>
@@ -28,7 +35,6 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void MoveUp()
     {
-        Debug.Log("Moving U");
     }
     
     /// <summary>
@@ -36,7 +42,6 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void MoveDown()
     {
-        Debug.Log("Moving D");
     }
     
     /// <summary>
@@ -44,7 +49,7 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void PunchLeft()
     {
-        Debug.Log("Moving PL");
+        anim.Play("Punching");
     }
     
     /// <summary>
@@ -52,6 +57,7 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void PunchRight()
     {
-        Debug.Log("Moving PR");
+        anim.Play("Punching");
     }
+
 }

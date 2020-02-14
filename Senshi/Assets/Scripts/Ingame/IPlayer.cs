@@ -4,8 +4,8 @@
 /// </summary>
 public interface IPlayer
 {
-    void MoveLeft();
-    void MoveRight();
+    void MoveBackward();
+    void MoveForward();
     void MoveUp();
     void MoveDown();
 
