@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -11,6 +10,7 @@ public class Settings : MonoBehaviour
     [SerializeField] private Slider audio;
     [SerializeField] private Dropdown resolution;
     [SerializeField] private Dropdown screenMode;
+    [SerializeField] private GameObject settingsObject;
 
     private void Update()
     {
@@ -47,6 +47,7 @@ public class Settings : MonoBehaviour
     public void CloseScreen()
     {
         MenuManager.menuState = 2;
-        Destroy(this);
+        MenuManager.menuExist = false;
+        Destroy(settingsObject);
     }
 }

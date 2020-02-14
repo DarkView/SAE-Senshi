@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Start()
     {
+        Time.timeScale = 1;
         input = transform.GetComponent<KeybindManager>();
         player1Keybinds = input.GetPlayerKeybinds(KeybindManager.PlayerOption.Player_1);
         player2Keybinds = input.GetPlayerKeybinds(KeybindManager.PlayerOption.Player_2);

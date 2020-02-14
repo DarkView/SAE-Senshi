@@ -408,7 +408,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7826886702844050461}
-        m_MethodName: CloseScene
+        m_MethodName: CloseScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1303,6 +1303,7 @@ MonoBehaviour:
   audio: {fileID: 7826886703124515334}
   resolution: {fileID: 0}
   screenMode: {fileID: 7826886701862394235}
+  settingsObject: {fileID: 6671328697872205338}
 --- !u!1 &7826886702904198232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,18 +1665,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!1 &7826886703148330513
 GameObject:
   m_ObjectHideFlags: 0

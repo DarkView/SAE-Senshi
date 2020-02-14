@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-/// <summary>
+﻿/// <summary>
 /// Interface used to ensure Playercontroller compatibility
 /// By Nils
 /// </summary>

@@ -1,12 +1,20 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// loads menu elements in MainMenu
+/// </summary>
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private Object mainMenu;
     [SerializeField] private Object settingsMenu;
     public static int menuState = 0;
-    public int menu
+    public static bool menuExist;
+
+    private void Start()
+    {
+        menuState = 0;
+        menuExist = false;
+    }
 
     private void Update()
     {
@@ -15,17 +23,23 @@ public class MenuManager : MonoBehaviour
 
     void createMenu()
     {
-        switch (menuState)
+        if (!menuExist)
         {
-            case 0:
-                Instantiate(mainMenu);
-                break;
-            case 1:
-                Instantiate(settingsMenu);
-                break;
-            case 2:
-                Instantiate(mainMenu);
-                break;
+            switch (menuState)
+            {
+                case 0:
+                    Instantiate(mainMenu);
+                    menuExist = true;
+                    break;
+                case 1:
+                    Instantiate(settingsMenu);
+                    menuExist = true;
+                    break;
+                case 2:
+                    Instantiate(mainMenu);
+                    menuExist = true;
+                    break;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Object startScene;
-    [SerializeField] private Object settingsScreen;
+    [SerializeField] private GameObject mainMenuObject;
 
     public void StartGame()
     {
@@ -18,10 +18,11 @@ public class MainMenu : MonoBehaviour
     public void OpenSettings()
     {
         MenuManager.menuState = 1;
-        Destroy(this);
+        MenuManager.menuExist = false;
+        Destroy(mainMenuObject);
     }
 
-    public void closeApplication()
+    public void CloseApplication()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

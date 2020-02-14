@@ -151,7 +151,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2948805838594876656}
-        m_MethodName: closeApplication
+        m_MethodName: CloseApplication
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -482,8 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScene: {fileID: 102900000, guid: 8400497e97b0ed1439f836bec900aaaf, type: 3}
-  settingsScreen: {fileID: 6671328697872205338, guid: 3fafff60f34c5344baae22370a95c93c,
-    type: 3}
+  mainMenuObject: {fileID: 4161390866081503532}
 --- !u!1 &7155640385812006995
 GameObject:
   m_ObjectHideFlags: 0
