@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Object startScene;
-    [SerializeField] private Object settingsScene;
+    [SerializeField] private Object settingsScreen;
 
     public void StartGame()
     {
@@ -17,7 +17,8 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings()
     {
-        SceneManager.LoadScene(settingsScene.name, LoadSceneMode.Additive);
+        MenuManager.menuState = 1;
+        Destroy(this);
     }
 
     public void closeApplication()

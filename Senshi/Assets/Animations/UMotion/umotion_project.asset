@@ -20,7 +20,7 @@ MonoBehaviour:
     PoseToolPivotMode:
       valueInternal: 0
     PoseToolMode:
-      valueInternal: 2
+      valueInternal: 1
     PoseMirrorMode:
       valueInternal: 0
     ConfigMode:
@@ -36,9 +36,9 @@ MonoBehaviour:
     TimelineViewMode:
       valueInternal: 0
     FramesScrollPosition:
-      valueInternal: -40
+      valueInternal: 21.423561
     FramesZoom:
-      valueInternal: 1
+      valueInternal: 0.9332544
     PropertiesScrollPosition:
       valueInternal: 0
     PropertiesZoom:
@@ -133,7 +133,7 @@ MonoBehaviour:
     AnimationLayersVisible:
       valueInternal: 0
     MuscleAssistantTab:
-      valueInternal: 0
+      valueInternal: 2
     MuscleAssistantLeftLegKeepPos:
       valueInternal: 0
     MuscleAssistantRightLegKeepPos:
@@ -260,14 +260,14 @@ MonoBehaviour:
       valueInternal: 0
     LocalPositionChannelList:
     - CurrentValue:
-        valueInternal: 6.38
+        valueInternal: 22.07
       ReferencePoseValue:
-        valueInternal: 6.38
+        valueInternal: 22.07
       PoseValueList: []
       ChannelPerClipList:
       - LayerList:
         - CurrentOriginalValue:
-            valueInternal: 6.38
+            valueInternal: 22.07
           newKeyListSerialized: 00000000
     - CurrentValue:
         valueInternal: -3.91175
@@ -325,14 +325,14 @@ MonoBehaviour:
             valueInternal: 0
           newKeyListSerialized: 00000000
     - CurrentValue:
-        valueInternal: 0.70710677
+        valueInternal: -0.70710677
       ReferencePoseValue:
-        valueInternal: 0.70710677
+        valueInternal: -0.70710677
       PoseValueList: []
       ChannelPerClipList:
       - LayerList:
         - CurrentOriginalValue:
-            valueInternal: 0.70710677
+            valueInternal: -0.70710677
           newKeyListSerialized: 00000000
     - CurrentValue:
         valueInternal: 0
@@ -9740,7 +9740,7 @@ MonoBehaviour:
             valueInternal: -0.011998318
           newKeyListSerialized: 00000000
     LocalRotationSelected:
-      valueInternal: 1
+      valueInternal: 0
     RotationModePerClip:
     - valueInternal: 0
     LocalRotationChannelList:
