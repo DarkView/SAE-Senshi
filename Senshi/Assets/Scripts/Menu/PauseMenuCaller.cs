@@ -1,7 +1,9 @@
-﻿using System;
-using UnityEngine;
-using Object = UnityEngine.Object;
+﻿using UnityEngine;
 
+/// <summary>
+/// call pausemenu by button escape
+/// by Zayarmoe
+/// </summary>
 public class PauseMenuCaller : MonoBehaviour
 {
     [SerializeField] private Object pauseMenuObject;
