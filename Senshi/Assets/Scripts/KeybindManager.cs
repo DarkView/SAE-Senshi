@@ -45,7 +45,7 @@ public class KeybindManager : MonoBehaviour
     /// <summary>
     /// Loads all default keybinds into the Dictionary
     /// </summary>
-    private void LoadDefaultKeybinds()
+    public void LoadDefaultKeybinds()
     {
         keybinds = new Keybindings();
         // Player 1
@@ -127,7 +127,7 @@ public class KeybindManager : MonoBehaviour
     /// <summary>
     /// Saves the current keybinds to the keys.json file
     /// </summary>
-    private void SaveKeybindsToFile()
+    public void SaveKeybindsToFile()
     {
         StreamWriter sw = File.CreateText(CFG_FOLDER + KEYS_CFG);
         sw.Write(JsonConvert.SerializeObject(keybinds, Formatting.Indented));

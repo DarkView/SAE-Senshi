@@ -11,6 +11,7 @@ public class Settings : MonoBehaviour
     [SerializeField] private Dropdown resolution;
     [SerializeField] private Dropdown screenMode;
     [SerializeField] private GameObject settingsObject;
+    [SerializeField] private Object controlsObject;
 
     private void Update()
     {
@@ -18,14 +19,15 @@ public class Settings : MonoBehaviour
         ChangeScreenMode();
     }
 
+    public void OpenControls()
+    {
+        Instantiate(controlsObject);
+        Destroy(settingsObject);
+    }
+
     private void ChangeAudio()
     {
         AudioListener.volume = audio.value;
-    }
-
-    private void ChangeResolution()
-    {
-
     }
 
     private void ChangeScreenMode()
