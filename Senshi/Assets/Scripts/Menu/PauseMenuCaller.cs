@@ -2,7 +2,7 @@
 
 /// <summary>
 /// call pausemenu by button escape
-/// by Zayarmoe
+/// by Zayarmoe Kyaw
 /// </summary>
 public class PauseMenuCaller : MonoBehaviour
 {

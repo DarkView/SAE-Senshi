@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 /// <summary>
-/// SettingsButtons
-/// by Zayarmoe
+/// Buttons for Settings menu 
+/// by Zayarmoe Kyaw
 /// </summary>
 public class Settings : MonoBehaviour
 {
@@ -12,7 +14,8 @@ public class Settings : MonoBehaviour
     [SerializeField] private Dropdown screenMode;
     [SerializeField] private GameObject settingsObject;
     [SerializeField] private Object controlsObject;
-
+    [SerializeField] private Object pausemenuObject;
+    
     private void Update()
     {
         ChangeAudio();
@@ -48,8 +51,18 @@ public class Settings : MonoBehaviour
 
     public void CloseScreen()
     {
-        MenuManager.menuState = 2;
-        MenuManager.menuExist = false;
-        Destroy(settingsObject);
+        switch (PauseMenuCaller.paused)
+        {
+            case false:
+                MenuManager.menuState = 2;
+                MenuManager.menuExist = false;
+                Destroy(settingsObject);
+                break;
+            case true:
+                Instantiate(pausemenuObject);
+                Destroy(settingsObject);
+                break;
+        }
     }
 }
+

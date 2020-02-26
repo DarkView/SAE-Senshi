@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Main Menu Buttons and input loops
-/// by Zayarmoe
+/// by Zayarmoe Kyaw
 /// </summary>
 public class MainMenu : MonoBehaviour
 {

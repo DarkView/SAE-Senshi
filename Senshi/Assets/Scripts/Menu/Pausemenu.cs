@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Pause menu buttons
-/// by Zayarmoe
+/// by Zayarmoe Kyaw
 /// </summary>
 public class Pausemenu : MonoBehaviour
 {
@@ -34,6 +34,7 @@ public class Pausemenu : MonoBehaviour
     public void LoadSettings()
     {
         Instantiate(settingsObject);
+        Destroy(pauseMenuObject);
     }
 
     public void LoadMainMenu()

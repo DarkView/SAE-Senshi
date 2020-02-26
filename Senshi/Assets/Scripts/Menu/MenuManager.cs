@@ -2,6 +2,7 @@
 
 /// <summary>
 /// loads menu elements in MainMenu
+/// by Zayarmoe Kyaw
 /// </summary>
 public class MenuManager : MonoBehaviour
 {

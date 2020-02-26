@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// keybind menu specific buttons
+/// by Zayarmoe Kyaw
+/// </summary>
 public class KeybindMenu : MonoBehaviour
 {
     [SerializeField] private Object settingsMenu;
