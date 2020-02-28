@@ -489,12 +489,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100188785}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.1219126
-  m_Height: 0.32302937
+  m_Radius: 0.3
+  m_Height: 1
   m_Direction: 0
-  m_Center: {x: -0.22095092, y: -0.076061785, z: -0.052605506}
+  m_Center: {x: -0.5, y: 0, z: 0}
 --- !u!1 &113966825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1820,7 @@ GameObject:
   - component: {fileID: 502813166}
   m_Layer: 0
   m_Name: Hips
-  m_TagString: Untagged
+  m_TagString: Attackcollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3332,6 +3332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d24ea4003941eb81a2cafac501848f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
 --- !u!54 &1132831818
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3449,12 +3450,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141661433}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.1219126
-  m_Height: 0.32302937
+  m_Radius: 0.3
+  m_Height: 1
   m_Direction: 0
-  m_Center: {x: -0.22095092, y: -0.076061785, z: -0.052605506}
+  m_Center: {x: -0.5, y: 0, z: 0}
 --- !u!1 &1153245970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3649,12 +3650,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215767531}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.12471172
-  m_Height: 0.4860866
+  m_Radius: 0.3
+  m_Height: 1
   m_Direction: 0
-  m_Center: {x: 0.20290561, y: -0.0015881062, z: 0.0112991035}
+  m_Center: {x: 0.5, y: 0, z: 0}
 --- !u!1 &1253024229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3938,7 +3939,7 @@ GameObject:
   - component: {fileID: 1364081609}
   m_Layer: 0
   m_Name: Hips
-  m_TagString: Untagged
+  m_TagString: Attackcollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4704,6 +4705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d24ea4003941eb81a2cafac501848f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
 --- !u!136 &1570223419
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4821,12 +4823,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626732409}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.12471172
-  m_Height: 0.4860866
+  m_Radius: 0.3
+  m_Height: 1
   m_Direction: 0
-  m_Center: {x: 0.20290561, y: -0.0015881062, z: 0.0112991035}
+  m_Center: {x: 0.5, y: 0, z: 0}
 --- !u!1 &1696342911
 GameObject:
   m_ObjectHideFlags: 0

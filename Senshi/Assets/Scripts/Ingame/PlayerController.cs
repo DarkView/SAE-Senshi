@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Controls the players movement and attacks
@@ -8,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, IPlayer
 {
     private Animator anim;
+    [SerializeField] private float speed;
 
     private void Start()
     {
@@ -15,19 +15,21 @@ public class PlayerController : MonoBehaviour, IPlayer
     }
 
     /// <summary>
-    /// Moves the player Forward
+    /// Moves the player backward using rigidbody
     /// </summary>
     public void MoveBackward()
     {
-        transform.Translate(0, 0, (-15f * Time.deltaTime));
+        var moveDirection = this.transform.rotation * Vector3.right * speed;
+        this.transform.Translate(moveDirection * Time.deltaTime);
     }
-    
+
     /// <summary>
-    /// Moves the player Backward
+    /// Moves the player forward using rigidbody
     /// </summary>
     public void MoveForward()
     {
-        transform.Translate(0, 0, (15f * Time.deltaTime));
+        var moveDirection = this.transform.rotation * Vector3.left * speed;
+        this.transform.Translate(moveDirection * Time.deltaTime);
     }
     
     /// <summary>

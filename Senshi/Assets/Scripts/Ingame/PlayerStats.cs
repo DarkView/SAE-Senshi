@@ -27,12 +27,13 @@ public class PlayerStats : MonoBehaviour
 
     private void DamageCalculation(int damagetaken)
     {
-        health -= damagetaken;
+        this.health -= damagetaken;
     }
      
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Attackcollider"))
+        //other.gameObject.CompareTag("Attackcollider")
+        if (true)
         {
             if (!damageCooldown)
             {
