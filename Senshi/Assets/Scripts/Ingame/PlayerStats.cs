@@ -15,6 +15,13 @@ public class PlayerStats : MonoBehaviour
     private bool damageCooldown = false;
     [SerializeField] private float attackCooldowntime = 1;
 
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
+
     private void Update()
     {
         ShowHealthbar();
@@ -32,13 +39,15 @@ public class PlayerStats : MonoBehaviour
      
     private void OnCollisionEnter(Collision other)
     {
+        Animator animEnemy = other.gameObject.GetComponentInChildren<Animator>();
         //other.gameObject.CompareTag("Attackcollider")
         if (true)
         {
-            if (!damageCooldown)
+            if (!damageCooldown && animEnemy.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
             {
                 DamageCalculation(other.gameObject.GetComponent<PlayerStats>().damage);
                 damageCooldown = true;
+                anim.Play("takingPunch");
             }
             else
             {
