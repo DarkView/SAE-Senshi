@@ -19,8 +19,12 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void MoveBackward()
     {
-        var moveDirection = this.transform.rotation * Vector3.right * speed;
-        this.transform.Translate(moveDirection * Time.deltaTime);
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
+        {
+            var moveDirection = this.transform.rotation * Vector3.right * speed;
+            this.transform.Translate(moveDirection * Time.deltaTime);
+            anim.Play("Walking Backwards");
+        }
     }
 
     /// <summary>
@@ -28,8 +32,12 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void MoveForward()
     {
-        var moveDirection = this.transform.rotation * Vector3.left * speed;
-        this.transform.Translate(moveDirection * Time.deltaTime);
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
+        {
+            var moveDirection = this.transform.rotation * Vector3.left * speed;
+            this.transform.Translate(moveDirection * Time.deltaTime);
+            anim.Play("Walking");
+        }
     }
     
     /// <summary>
