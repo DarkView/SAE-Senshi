@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void MoveBackward()
     {
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punching") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Walking"))
         {
             var moveDirection = this.transform.rotation * Vector3.right * speed;
             this.transform.Translate(moveDirection * Time.deltaTime);
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void MoveForward()
     {
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punching") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Walking Backwards"))
         {
             var moveDirection = this.transform.rotation * Vector3.left * speed;
             this.transform.Translate(moveDirection * Time.deltaTime);
