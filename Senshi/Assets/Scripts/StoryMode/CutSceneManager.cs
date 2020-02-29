@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
+using UnityEngine.UI;
 
 public class CutSceneManager : MonoBehaviour
 {
@@ -15,11 +14,19 @@ public class CutSceneManager : MonoBehaviour
     [SerializeField] private Sprite akumaMid;
     [SerializeField] private Sprite endScene;
 
-
     public void InitCutScene(int index)
     {
         SceneManager.LoadScene(1);
-        switch (index)
+    }
+
+    private void Awake()
+    {
+        LoadCutScene();
+    }
+
+    private void LoadCutScene()
+    {
+        switch (StoryManager.StoryIndex)
         {
             case 1:
                 panel.GetComponent<Image>().sprite = openingScene;
@@ -41,7 +48,6 @@ public class CutSceneManager : MonoBehaviour
             case 11:
                 panel.GetComponent<Image>().sprite = endScene;
                 break;
-                
         }
     }
 }

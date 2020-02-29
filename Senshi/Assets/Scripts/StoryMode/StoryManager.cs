@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public static class StoryManager
+﻿public static class StoryManager
 {
 
     public static int StoryIndex = 1;
