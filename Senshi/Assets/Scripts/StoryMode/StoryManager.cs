@@ -1,10 +1,9 @@
-﻿public static class StoryManager
+﻿using UnityEngine.SceneManagement;
+public static class StoryManager
 {
 
     public static int StoryIndex = 1;
-    public static CutSceneManager SceneManager = new CutSceneManager();
-
-    
+    public static CutSceneManager CutSceneManager = new CutSceneManager();
 
     /// <summary>
     /// Choose Story Stage with index StoryIndex
@@ -48,7 +47,7 @@
     public static void LoadCutScene(int index)
     {
         //ruft CutSceneManager Script auf
-        SceneManager.InitCutScene(index);
+        CutSceneManager.InitCutScene(index);
 
         //if cutscene finished
         StoryIndex += 1;
@@ -58,6 +57,7 @@
     public static void InitStage(int index)
     {
         //ruft fight Script auf, übergibt 2 Spieler (GameObjects)
+        SceneManager.LoadScene(2);
     }
 
     public static void StoryContinue()

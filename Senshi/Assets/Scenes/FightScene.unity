@@ -3379,6 +3379,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1939197769}
   damage: 5
   attackCooldowntime: 1
+  DefaultPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1140421988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4752,6 +4753,7 @@ MonoBehaviour:
   healthSlider: {fileID: 501049619}
   damage: 5
   attackCooldowntime: 1
+  DefaultPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1606841162
 GameObject:
   m_ObjectHideFlags: 0
@@ -5960,6 +5962,7 @@ GameObject:
   - component: {fileID: 2066586974}
   - component: {fileID: 2066586976}
   - component: {fileID: 2066586977}
+  - component: {fileID: 2066586978}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6020,6 +6023,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuObject: {fileID: 4511645610772342538, guid: cb804c4c14322aa409fbe5984065cca2,
+    type: 3}
+--- !u!114 &2066586978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066586973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1dceb1358ebe104e840999750c041f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 1570223421}
+  player2: {fileID: 1132831820}
+  winsNeeded: 0
+  senshiWin: {fileID: 3707547086519807467, guid: a9fa3f7184d9d384bbba2f1e8840ef5c,
+    type: 3}
+  senshiLost: {fileID: 6965975222605326170, guid: 55d7169fb71087e4dbc1405559f9ad0a,
+    type: 3}
+  mainMenu: {fileID: 4161390866081503532, guid: 5d62e26427e92ae4eb2fe4cf99da1f35,
     type: 3}
 --- !u!1 &2072621766
 GameObject:

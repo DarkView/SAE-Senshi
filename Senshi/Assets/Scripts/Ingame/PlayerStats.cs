@@ -9,17 +9,19 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     [Range(0f,100f)]
-    [SerializeField] private int health = 100;
+    [SerializeField] public int health = 100;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private int damage = 5;
     private bool damageCooldown = false;
     [SerializeField] private float attackCooldowntime = 1;
+    public Vector3 DefaultPosition;
 
     private Animator anim;
 
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        DefaultPosition = this.transform.position;
     }
 
     private void Update()
