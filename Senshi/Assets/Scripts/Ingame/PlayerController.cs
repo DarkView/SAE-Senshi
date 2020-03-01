@@ -1,51 +1,92 @@
 ﻿using System.Collections;
-using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// Controls the players movement and attacks
-/// By Nils
+/// Controls and Animation
+/// by Zayarmoe
 /// </summary>
 public class PlayerController : MonoBehaviour, IPlayer
 {
     private Animator anim;
     [SerializeField] private float speed;
-    private bool cdRightPunch;
-    private bool cdLeftPunch;
+    [SerializeField] private bool punchCooldown;
 
     private void Start()
     {
-        cdRightPunch = true;
-        cdLeftPunch = true;
         anim = GetComponentInChildren<Animator>();
     }
 
     /// <summary>
-    /// Moves the player backward using rigidbody
+    /// Moves the player forward 
     /// </summary>
-    public void MoveBackward()
+    public void MoveForward()
     {
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punching") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Walking"))
+        if (!anim.GetBool("hit"))
         {
-            var moveDirection = this.transform.rotation * Vector3.right * speed;
-            this.transform.Translate(moveDirection * Time.deltaTime);
-            anim.Play("Walking Backwards");
+            var moveDirection = transform.rotation * Vector3.left * speed;
+            transform.Translate(moveDirection * Time.deltaTime);
+            anim.SetBool("walkForward", true);
         }
     }
 
     /// <summary>
-    /// Moves the player forward using rigidbody
+    /// Moves the player backward
     /// </summary>
-    public void MoveForward()
+    public void MoveBackward()
     {
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punching") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Walking Backwards"))
+        if (!anim.GetBool("hit"))
         {
-            var moveDirection = this.transform.rotation * Vector3.left * speed;
-            this.transform.Translate(moveDirection * Time.deltaTime);
-            anim.Play("Walking");
+            var moveDirection = transform.rotation * Vector3.right * speed;
+            transform.Translate(moveDirection * Time.deltaTime);
+            anim.SetBool("walkBackward", true);
         }
     }
-    
+
+    /// <summary>
+    /// Makes the player punch with their left hand
+    /// </summary>
+    public void PunchLeft()
+    {
+        if (!punchCooldown)
+        {
+            anim.SetBool("punching", true);
+            StartCoroutine(PunchCooldown());
+        }
+    }
+
+    /// <summary>
+    /// Makes the player punch with their right hand
+    /// </summary>
+    public void PunchRight()
+    {
+        if (!punchCooldown)
+        {
+            anim.SetBool("punching",true);
+            StartCoroutine(PunchCooldown());
+        }
+    }
+
+    private IEnumerator PunchCooldown()
+    {
+        yield return new WaitForSeconds(1f);
+        punchCooldown = false;
+    }
+
+    public void AnimationReset()
+    {
+        anim.SetBool("hit", false);
+        anim.SetBool("punching", false);
+        anim.SetBool("walkForward", false);
+        anim.SetBool("walkBackward", false);
+    }
+
+    /// <summary>
+    /// Moves the player Down
+    /// </summary>
+    public void MoveDown()
+    {
+    }
+
     /// <summary>
     /// Moves the player Up
     /// </summary>
@@ -53,49 +94,4 @@ public class PlayerController : MonoBehaviour, IPlayer
     {
     }
     
-    /// <summary>
-    /// Moves the player Down
-    /// </summary>
-    public void MoveDown()
-    {
-    }
-    
-    /// <summary>
-    /// Makes the player punch with their left hand
-    /// </summary>
-    public void PunchLeft()
-    {
-        if (cdLeftPunch)
-        {
-            cdLeftPunch = false;
-            anim.Play("Punching");
-            StartCoroutine(CooldownLeftPunch());
-        }
-    }
-    
-    /// <summary>
-    /// Makes the player punch with their right hand
-    /// </summary>
-    public void PunchRight()
-    {
-        if (cdRightPunch)
-        {
-            cdRightPunch = false;
-            anim.Play("Punching");
-            StartCoroutine(CooldownRightPunch());
-        }
-    }
-
-    private IEnumerator CooldownRightPunch()
-    {
-        yield return new WaitForSeconds(2);
-        cdRightPunch = true;
-    }
-
-    private IEnumerator CooldownLeftPunch()
-    {
-        yield return new WaitForSeconds(2);
-        cdLeftPunch = true;
-    }
-
 }

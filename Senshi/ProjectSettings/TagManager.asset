@@ -6,7 +6,7 @@ TagManager:
   tags:
   - MainMenu
   - SettingsMenu
-  - Attackcollider
+  - attackCollider
   layers:
   - Default
   - TransparentFX

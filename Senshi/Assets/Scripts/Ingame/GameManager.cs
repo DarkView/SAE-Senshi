@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
                         if (player1HeldButtons.Contains(io))
                         {
                             player1HeldButtons.Remove(io);
+                            Player1Controller.AnimationReset();
                         }
                     }
                 }
@@ -110,6 +111,7 @@ public class GameManager : MonoBehaviour
                             if (player2HeldButtons.Contains(io))
                             {
                                 player2HeldButtons.Remove(io);
+                                Player2Controller.AnimationReset();
                             }
                         }
                     }
@@ -167,3 +169,4 @@ public class GameManager : MonoBehaviour
     }
 
 }
+

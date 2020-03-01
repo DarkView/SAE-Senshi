@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerStats : MonoBehaviour
 {
-    [Range(0f,100f)]
+    [Range(0f, 100f)]
     [SerializeField] public int health = 100;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private int damage = 5;
@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        ShowHealthbar();
+        ShowHealthBar();
     }
 
     public void SetDefaultPosition()
@@ -36,38 +36,35 @@ public class PlayerStats : MonoBehaviour
         this.transform.position = DefaultPosition;
     }
 
-    private void ShowHealthbar()
+    private void ShowHealthBar()
     {
         healthSlider.value = health;
     }
 
-    private void DamageCalculation(int damagetaken)
+    private void DamageCalculation(int damageTaken)
     {
-        this.health -= damagetaken;
+        this.health -= damageTaken;
     }
-     
+
     private void OnCollisionEnter(Collision other)
     {
         Animator animEnemy = other.gameObject.GetComponentInChildren<Animator>();
-        //other.gameObject.CompareTag("Attackcollider")
-        if (true)
+        if (!damageCooldown && animEnemy.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
         {
-            if (!damageCooldown && animEnemy.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
-            {
-                DamageCalculation(other.gameObject.GetComponent<PlayerStats>().damage);
-                damageCooldown = true;
-                anim.Play("takingPunch");
-            }
-            else
-            {
-                StartCoroutine(DamageCooldown(attackCooldowntime));
-            }
+            DamageCalculation(other.gameObject.GetComponentInChildren<PlayerStats>().damage);
+            damageCooldown = true;
+            anim.SetBool("hit", true);
+        }
+        else
+        {
+            StartCoroutine(DamageCooldown(attackCooldowntime));
         }
     }
 
-    private IEnumerator DamageCooldown(float cooldowntime)
+    private IEnumerator DamageCooldown(float cooldownTime)
     {
-        yield return new WaitForSecondsRealtime(cooldowntime);
+        yield return new WaitForSecondsRealtime(cooldownTime);
+        anim.SetBool("hit", false);
         damageCooldown = false;
     }
 }
