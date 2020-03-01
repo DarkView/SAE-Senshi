@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private int damage = 5;
     private bool damageCooldown = false;
-    [SerializeField] private float attackCooldowntime = 1;
+    [SerializeField] public float attackCooldowntime = 1;
     public Vector3 DefaultPosition;
 
     private Animator anim;

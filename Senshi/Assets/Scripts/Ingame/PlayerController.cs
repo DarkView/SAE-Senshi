@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using TMPro;
+using UnityEngine;
 
 /// <summary>
 /// Controls the players movement and attacks
@@ -8,9 +10,13 @@ public class PlayerController : MonoBehaviour, IPlayer
 {
     private Animator anim;
     [SerializeField] private float speed;
+    private bool cdRightPunch;
+    private bool cdLeftPunch;
 
     private void Start()
     {
+        cdRightPunch = true;
+        cdLeftPunch = true;
         anim = GetComponentInChildren<Animator>();
     }
 
@@ -59,7 +65,12 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void PunchLeft()
     {
-        anim.Play("Punching");
+        if (cdLeftPunch)
+        {
+            cdLeftPunch = false;
+            anim.Play("Punching");
+            StartCoroutine(CooldownLeftPunch());
+        }
     }
     
     /// <summary>
@@ -67,7 +78,24 @@ public class PlayerController : MonoBehaviour, IPlayer
     /// </summary>
     public void PunchRight()
     {
-        anim.Play("Punching");
+        if (cdRightPunch)
+        {
+            cdRightPunch = false;
+            anim.Play("Punching");
+            StartCoroutine(CooldownRightPunch());
+        }
+    }
+
+    private IEnumerator CooldownRightPunch()
+    {
+        yield return new WaitForSeconds(2);
+        cdRightPunch = true;
+    }
+
+    private IEnumerator CooldownLeftPunch()
+    {
+        yield return new WaitForSeconds(2);
+        cdLeftPunch = true;
     }
 
 }
