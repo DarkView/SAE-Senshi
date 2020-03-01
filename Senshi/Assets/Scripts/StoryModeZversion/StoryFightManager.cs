@@ -11,7 +11,7 @@ public class StoryFightManager : Fightmanager
 
     protected override void CheckStoryMode()
     {
-        if (!StoryManagerZ.isStoryMode)
+        if (!StoryManager.isStoryMode)
             Destroy(this);
     }
 

@@ -32,7 +32,7 @@ public class Fightmanager : MonoBehaviour
 
     protected virtual void CheckStoryMode()
     {
-        if (StoryManagerZ.isStoryMode)
+        if (StoryManager.isStoryMode)
             Destroy(this);
     }
 
@@ -54,7 +54,7 @@ public class Fightmanager : MonoBehaviour
 
     private void CheckPlayerDeath()
     {
-        if (player1.health > 0 && player1.health > 0)
+        if (player1.health > 0 && player2.health > 0)
             return;
 
         if (player1.health < 0)

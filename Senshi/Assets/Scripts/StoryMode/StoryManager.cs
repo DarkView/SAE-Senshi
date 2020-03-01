@@ -1,7 +1,7 @@
 ﻿using UnityEngine.SceneManagement;
 public static class StoryManager
 {
-
+    public static bool isStoryMode = false;
     public static int StoryIndex = 1;
     public static CutSceneManager CutSceneManager = new CutSceneManager();
 
