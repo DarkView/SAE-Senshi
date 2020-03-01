@@ -29,6 +29,11 @@ public class PlayerStats : MonoBehaviour
         ShowHealthbar();
     }
 
+    public void SetDefaultPosition()
+    {
+        this.transform.position = DefaultPosition;
+    }
+
     private void ShowHealthbar()
     {
         healthSlider.value = health;
