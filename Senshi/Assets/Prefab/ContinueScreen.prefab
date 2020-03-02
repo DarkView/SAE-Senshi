@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3707547086519807380}
   m_Layer: 0
-  m_Name: WinScreen
+  m_Name: ContinueScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3707547087370470719}
+      - m_Target: {fileID: 362630653867728689}
         m_MethodName: Continue
         m_Mode: 1
         m_Arguments:
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 3707547087370470713}
   - component: {fileID: 3707547087370470712}
   - component: {fileID: 3707547087370470718}
-  - component: {fileID: 3707547087370470719}
+  - component: {fileID: 362630653867728689}
   m_Layer: 0
   m_Name: WinScreen
   m_TagString: Untagged
@@ -715,7 +715,7 @@ MonoBehaviour:
     type: 3}
   mainMenuScene: {fileID: 102900000, guid: e7801eba01c862243b202b3858ca49ba, type: 3}
   pauseMenuObject: {fileID: 3707547086519807467}
---- !u!114 &3707547087370470719
+--- !u!114 &362630653867728689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3707547087370470716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c40993a460d0a4581e4659ed311238, type: 3}
+  m_Script: {fileID: 11500000, guid: aafb74868b058e840ba01156310b88e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3707547087456800161

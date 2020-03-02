@@ -247,7 +247,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 993572533792438847}
+      - m_Target: {fileID: 6869779060078041735}
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 5443491047663079868}
   - component: {fileID: 6789619438439159930}
   - component: {fileID: 1588376196196179760}
-  - component: {fileID: 993572533792438847}
+  - component: {fileID: 6869779060078041735}
   m_Layer: 0
   m_Name: GameOverCanvas
   m_TagString: Untagged
@@ -379,7 +379,7 @@ MonoBehaviour:
     type: 3}
   mainMenuScene: {fileID: 102900000, guid: e7801eba01c862243b202b3858ca49ba, type: 3}
   pauseMenuObject: {fileID: 6965975222605326170}
---- !u!114 &993572533792438847
+--- !u!114 &6869779060078041735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1044694523408931904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999e2f6b97e707e4298a28d65db77d1a, type: 3}
+  m_Script: {fileID: 11500000, guid: aafb74868b058e840ba01156310b88e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2588978189948661106

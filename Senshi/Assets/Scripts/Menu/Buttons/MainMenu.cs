@@ -9,6 +9,13 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Object startScene;
     [SerializeField] private GameObject mainMenuObject;
+    [SerializeField] private GameObject storySelectionObject;
+
+    public void StartStory()
+    {
+        Instantiate(storySelectionObject);
+        Destroy(mainMenuObject);
+    }
 
     public void StartGame()
     {
