@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// checks for winconditions during the fight, resets the fight
@@ -10,24 +11,35 @@ public class Fightmanager : MonoBehaviour
     [SerializeField] private PlayerStats player1;
     [SerializeField] private PlayerStats player2;
     [SerializeField] private int timer = 120;
-    [SerializeField] private int passedTime;
+    [SerializeField] private float passedTime;
+    [SerializeField] private Text timerText;
 
-    protected int _player1Wins;
-    protected int _player2Wins;
-    [SerializeField] protected int neededWins;
+    protected int Player1Wins;
+    protected int Player2Wins;
+    [SerializeField] protected int NeededWins
+    {
+        get
+        {
+            if (StoryManager.isStoryMode) return 1;
+            else return 3;
+        }
+    }
+    private bool fightFinished;
 
-    protected int _winner;
+    protected int Winner;
     [SerializeField] private GameObject winScreen;
 
     protected virtual void Start()
     {
         InitFight();
         CheckStoryMode();
+        InitPlayerStats();
     }
 
     private void Update()
     {
         InitFightConditonChecker();
+        PrintTimer();
     }
 
     protected virtual void CheckStoryMode()
@@ -38,11 +50,16 @@ public class Fightmanager : MonoBehaviour
 
     protected virtual void InitFight()
     {
-        player1.SetDefaultPosition();
-        player2.SetDefaultPosition();
-        neededWins = 3;
+        player1.StatReset();
+        player2.StatReset();
         passedTime = timer;
         StartCoroutine(CountTimer());
+    }
+
+    private void InitPlayerStats()
+    {
+        player1.InitWinCount(NeededWins);
+        player2.InitWinCount(NeededWins);
     }
 
     private void InitFightConditonChecker()
@@ -57,10 +74,10 @@ public class Fightmanager : MonoBehaviour
         if (player1.health > 0 && player2.health > 0)
             return;
 
-        if (player1.health < 0)
-            _player2Wins++;
-        else if (player2.health < 0)
-            _player1Wins++;
+        if (player1.health <= 0)
+            Player2Wins++;
+        else if (player2.health <= 0)
+            Player1Wins++;
 
         RestartFight();
     }
@@ -71,35 +88,47 @@ public class Fightmanager : MonoBehaviour
             return;
 
         if (player1.health > player2.health)
-            _player1Wins++;
+            Player1Wins++;
         else
-            _player2Wins++;
+            Player2Wins++;
 
         RestartFight();
     }
 
     protected virtual void CheckFightFinish()
     {
-        if (_player1Wins == neededWins || _player2Wins == neededWins)
-            Instantiate(winScreen);
+        if ((Player1Wins == NeededWins || Player2Wins == NeededWins) && !fightFinished)
+        {
+            fightFinished = true;
+            StopAllCoroutines();
+            Time.timeScale = 0;
+        }
         else return;
 
-        _winner = (_player1Wins == neededWins) ? 1 : 2;
-        winScreen.GetComponent<Winscreen>().PrintFightWinner(_winner);
+        Winner = (Player1Wins == NeededWins) ? 1 : 2;
+        Instantiate(winScreen).GetComponentInChildren<Winscreen>().PrintFightWinner(Winner);
     }
 
     private IEnumerator CountTimer()
     {
         for (var i = 0; i < timer; i++)
         {
+            yield return new WaitForSeconds(1f);
             passedTime--;
-            yield return new WaitForSeconds(1);
+            
         }
+    }
+
+    private void PrintTimer()
+    {
+        timerText.text = ((int) passedTime).ToString();
     }
 
     private void RestartFight()
     {
-        StopCoroutine(CountTimer());
+        StopAllCoroutines();
+        player1.PrintWinCount(Player1Wins);
+        player2.PrintWinCount(Player2Wins);
         InitFight();
     }
 }

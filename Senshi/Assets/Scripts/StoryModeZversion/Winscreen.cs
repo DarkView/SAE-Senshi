@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Winscreen : MonoBehaviour
 {
     [SerializeField] private Text winScreenText;
-
+ 
     public void PrintFightWinner(int winner)
     {
         winScreenText.text = (winner == 1) ? "Player 1 wins!" : "Player 2 wins!";

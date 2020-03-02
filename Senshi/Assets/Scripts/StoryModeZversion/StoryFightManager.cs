@@ -18,17 +18,16 @@ public class StoryFightManager : Fightmanager
     protected override void InitFight()
     {
         base.InitFight();
-        neededWins = 1;
     }
 
     protected override void CheckFightFinish()
     {
-        if (_player1Wins != neededWins || _player2Wins != neededWins)
+        if (Player1Wins != NeededWins || Player2Wins != NeededWins)
             return;
 
-        _winner = (_player1Wins == neededWins) ? 1 : 2;
+        Winner = (Player1Wins == NeededWins) ? 1 : 2;
 
-        switch (_winner)
+        switch (Winner)
         {
             case 1:
                 Instantiate(continueScreen);

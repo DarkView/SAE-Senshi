@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour, IPlayer
     private Animator anim;
     [SerializeField] private float speed;
     [SerializeField] private bool punchCooldown;
+    [SerializeField] private int playerID;
 
     private void Start()
     {
@@ -25,7 +26,15 @@ public class PlayerController : MonoBehaviour, IPlayer
         {
             var moveDirection = transform.rotation * Vector3.left * speed;
             transform.Translate(moveDirection * Time.deltaTime);
-            anim.SetBool("walkForward", true);
+            switch (playerID)
+            {
+                case 1:
+                    anim.SetBool("walkForward", true);
+                    break;
+                case 2:
+                    anim.SetBool("walkBackward", true);
+                    break;
+            }
         }
     }
 
@@ -38,7 +47,15 @@ public class PlayerController : MonoBehaviour, IPlayer
         {
             var moveDirection = transform.rotation * Vector3.right * speed;
             transform.Translate(moveDirection * Time.deltaTime);
-            anim.SetBool("walkBackward", true);
+            switch (playerID)
+            {
+                case 1:
+                    anim.SetBool("walkBackward", true);
+                    break;
+                case 2:
+                    anim.SetBool("walkForward", true);
+                    break;
+            }
         }
     }
 
