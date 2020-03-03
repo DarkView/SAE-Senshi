@@ -3,6 +3,7 @@ public static class StoryManager
 {
     public static bool isStoryMode = false;
     public static int StoryIndex = 1;
+    public static int DialogueIndex = 1;
     public static CutSceneManager CutSceneManager = new CutSceneManager();
 
     /// <summary>
@@ -25,6 +26,7 @@ public static class StoryManager
 
         switch (StoryIndex)
         {
+            //Cutscene Cases
             case 1:
             case 2:
             case 4:
@@ -35,6 +37,8 @@ public static class StoryManager
             case 11:
                 LoadCutScene(StoryIndex);
                 break;
+
+            //Stage Cases
             case 3:
             case 6:
             case 9:
@@ -50,8 +54,8 @@ public static class StoryManager
         CutSceneManager.InitCutScene(index);
 
         //if cutscene finished
-        StoryIndex += 1;
-        StoryManager.LoadStage();
+        //StoryIndex += 1;
+        //StoryManager.LoadStage();
     }
 
     public static void InitStage(int index)
