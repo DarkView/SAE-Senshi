@@ -8,7 +8,7 @@ public class StoryModeButtons : MonoBehaviour
 {
     public void Continue()
     {
-        StoryManager.StoryIndex++;
+        CutSceneManager.StoryIndex++;
         StoryManager.LoadStage();
     }
 

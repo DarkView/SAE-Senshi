@@ -6,7 +6,7 @@ public class StoryButtons : MonoBehaviour
 
     public void StartStory()
     {
-        StoryManager.StoryIndex = this.storyIndex;
+        CutSceneManager.StoryIndex = storyIndex;
         StoryManager.LoadStage();
     }
 
