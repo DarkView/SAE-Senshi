@@ -20,7 +20,7 @@ public class CutSceneManager : MonoBehaviour
     private const string CFG_FOLDER = "./cfg/";
     private const string STORY_CFG = "story.json";
 
-    private const float DELAY = 2.5f;
+    private const float DELAY = 5f;
     private float textDelay = DELAY;
     private static bool cutsceneActive = false;
 
@@ -128,35 +128,35 @@ public class CutSceneManager : MonoBehaviour
 
     private void initCutsceneOutput()
     {
-        switch (StoryIndex)
-        {
-            case 1:
-                //panel.GetComponent<Image>().sprite = openingScene;
-                break;
-            case 2:
-                panel.GetComponent<Image>().sprite = riu;
-                break;
-            case 4:
-                //panel.GetComponent<Image>().sprite = riu;
-                break;
-            case 5:
-                panel.GetComponent<Image>().sprite = akai;
-                break;
-            case 7:
-                panel.GetComponent<Image>().sprite = akai;
-                break;
-            case 8:
-                panel.GetComponent<Image>().sprite = akumaPre;
-                break;
-            case 10:
-                panel.GetComponent<Image>().sprite = akumaMid;
-                break;
-            case 11:
-                panel.GetComponent<Image>().sprite = endScene;
-                break;
-            default:
-                break;
-        }
+        //switch (StoryIndex)
+        //{
+        //    case 1:
+        //        //panel.GetComponent<Image>().sprite = openingScene;
+        //        break;
+        //    case 2:
+        //        panel.GetComponent<Image>().sprite = riu;
+        //        break;
+        //    case 4:
+        //        //panel.GetComponent<Image>().sprite = riu;
+        //        break;
+        //    case 5:
+        //        panel.GetComponent<Image>().sprite = akai;
+        //        break;
+        //    case 7:
+        //        panel.GetComponent<Image>().sprite = akai;
+        //        break;
+        //    case 8:
+        //        panel.GetComponent<Image>().sprite = akumaPre;
+        //        break;
+        //    case 10:
+        //        panel.GetComponent<Image>().sprite = akumaMid;
+        //        break;
+        //    case 11:
+        //        panel.GetComponent<Image>().sprite = endScene;
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
 }

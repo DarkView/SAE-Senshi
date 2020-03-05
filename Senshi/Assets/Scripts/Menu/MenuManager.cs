@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        StoryManager.isStoryMode = false;
         menuState = 0;
         menuExist = false;
     }

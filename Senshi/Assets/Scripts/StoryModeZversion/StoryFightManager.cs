@@ -15,15 +15,15 @@ public class StoryFightManager : Fightmanager
             Destroy(this);
     }
 
-    protected override void InitFight()
-    {
-        base.InitFight();
-    }
-
     protected override void CheckFightFinish()
     {
-        if (Player1Wins != NeededWins || Player2Wins != NeededWins)
-            return;
+        if ((Player1Wins == NeededWins || Player2Wins == NeededWins) && !fightFinished)
+        {
+            fightFinished = true;
+            StopAllCoroutines();
+            Time.timeScale = 0;
+        }
+        else return;
 
         Winner = (Player1Wins == NeededWins) ? 1 : 2;
 

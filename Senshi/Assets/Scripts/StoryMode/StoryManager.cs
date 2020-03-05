@@ -1,4 +1,9 @@
 ﻿using UnityEngine.SceneManagement;
+
+/// <summary>
+/// Manages the Story Mode. Chooses FightScene or CutScene depending on Index.
+/// By Louis
+/// </summary>
 public static class StoryManager
 {
     public static bool isStoryMode = false;
@@ -30,7 +35,7 @@ public static class StoryManager
             case 6:
             case 9:
             case 12:
-                InitStage(CutSceneManager.StoryIndex);
+                InitStage();
                 break;
         }
         
@@ -51,7 +56,7 @@ public static class StoryManager
         //StoryManager.LoadStage();
     }
 
-    public static void InitStage(int index)
+    public static void InitStage()
     {
         //ruft fight Script auf, übergibt 2 Spieler (GameObjects)
         SceneManager.LoadScene(2);

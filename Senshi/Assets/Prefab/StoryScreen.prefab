@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4f63c20e09acd41991015f8f0d0a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyIndex: 11
+  storyIndex: 12
 --- !u!1 &4322136042397218140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,7 +2578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4f63c20e09acd41991015f8f0d0a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyIndex: 12
+  storyIndex: 11
 --- !u!1 &4322136043285507209
 GameObject:
   m_ObjectHideFlags: 0

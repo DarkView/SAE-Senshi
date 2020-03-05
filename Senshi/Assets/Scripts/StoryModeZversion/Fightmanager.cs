@@ -24,7 +24,7 @@ public class Fightmanager : MonoBehaviour
             else return 3;
         }
     }
-    private bool fightFinished;
+    protected bool fightFinished;
 
     protected int Winner;
     [SerializeField] private GameObject winScreen;
