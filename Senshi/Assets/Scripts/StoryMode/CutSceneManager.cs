@@ -6,29 +6,84 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the CutScenes
+/// By Louis
+/// </summary>
 public class CutSceneManager : MonoBehaviour
 {
+    /// <summary>
+    /// used to get access to Background Images
+    /// </summary>
     [SerializeField] private GameObject panel;
+    /// <summary>
+    /// Background Image for opening Scene
+    /// </summary>
     [SerializeField] private Sprite openingScene;
+    /// <summary>
+    /// Background Image for CutScene Riu
+    /// </summary>
     [SerializeField] private Sprite riu;
+    /// <summary>
+    /// Background Image for CutScene Akai
+    /// </summary>
     [SerializeField] private Sprite akai;
+    /// <summary>
+    /// Background Image for CutScene Akuma Prefight
+    /// </summary>
     [SerializeField] private Sprite akumaPre;
+    /// <summary>
+    /// Background Image for CutScene Akuma Midfight
+    /// </summary>
     [SerializeField] private Sprite akumaMid;
+    /// <summary>
+    /// Background Image for EndScene
+    /// </summary>
     [SerializeField] private Sprite endScene;
+    /// <summary>
+    /// Textfield to set story text in
+    /// </summary>
     [FormerlySerializedAs("text")] [SerializeField] private Text cutsceneTextField;
 
+    /// <summary>
+    /// File Path to cfg Folder
+    /// </summary>
     private const string CFG_FOLDER = "./cfg/";
+    /// <summary>
+    /// name of File where Story is saved
+    /// </summary>
     private const string STORY_CFG = "story.json";
 
+    /// <summary>
+    /// used as comparative for textDelay (timer)
+    /// </summary>
     private const float DELAY = 5f;
+    /// <summary>
+    /// used to campare with DELAY (as timer)
+    /// </summary>
     private float textDelay = DELAY;
+    /// <summary>
+    /// bool so we can end the cutscene
+    /// </summary>
     private static bool cutsceneActive = false;
 
+    /// <summary>
+    /// Index to check at which state of the story we are at the moment
+    /// </summary>
     public static int StoryIndex = 1;
+    /// <summary>
+    /// Index to load CutSceneText needed
+    /// </summary>
     public static int CutsceneTextIndex = 0;
 
+    /// <summary>
+    /// List of all CutSceneTexts
+    /// </summary>
     private List<string[]> storyText = new List<string[]>();
 
+    /// <summary>
+    /// Load or Create the Story
+    /// </summary>
     private void Awake()
     {
         if (!Directory.Exists(CFG_FOLDER))
@@ -96,6 +151,10 @@ public class CutSceneManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets text of CutScene depending on Story Index
+    /// and runs through Cut Scene Text using a Timer
+    /// </summary>
     private void Update()
     {
         textDelay += Time.deltaTime;
@@ -112,6 +171,9 @@ public class CutSceneManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Saves the Story to the story.json file
+    /// </summary>
     public void SaveStoryToFile()
     {
         StreamWriter sw = File.CreateText(CFG_FOLDER + STORY_CFG);
@@ -119,6 +181,10 @@ public class CutSceneManager : MonoBehaviour
         sw.Close();
     }
 
+    /// <summary>
+    /// Loads the CutScene depending on Story Index
+    /// </summary>
+    /// <param name="index"></param>
     public void InitCutScene(int index)
     {
         cutsceneActive = true;
@@ -126,6 +192,10 @@ public class CutSceneManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    /// <summary>
+    /// Sets Background of Cutscene depending on Story Index
+    /// Not used in the moment cause we don't have Art Assets
+    /// </summary>
     private void initCutsceneOutput()
     {
         //switch (StoryIndex)

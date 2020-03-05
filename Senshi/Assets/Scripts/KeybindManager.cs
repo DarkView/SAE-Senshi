@@ -39,7 +39,6 @@ public class KeybindManager : MonoBehaviour
             LoadDefaultKeybinds();
             SaveKeybindsToFile();
         }
-
     }
 
     /// <summary>

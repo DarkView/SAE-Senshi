@@ -6,8 +6,14 @@
 /// </summary>
 public static class StoryManager
 {
+    /// <summary>
+    /// bool to check if we are in Story Mode
+    /// </summary>
     public static bool isStoryMode = false;
-    public static int DialogueIndex = 1;
+
+    /// <summary>
+    /// New static Object CutSceneManager so we can use it
+    /// </summary>
     public static CutSceneManager CutSceneManager = new CutSceneManager();
 
     /// <summary>
@@ -30,7 +36,7 @@ public static class StoryManager
 
         switch (CutSceneManager.StoryIndex)
         {
-            //Stage Cases
+            //Fight Cases
             case 3:
             case 6:
             case 9:
@@ -46,26 +52,20 @@ public static class StoryManager
 
     }
 
+    /// <summary>
+    /// loads CutScene from CutSceneManager depending on StoryIndex
+    /// </summary>
+    /// <param name="index"></param>
     public static void LoadCutScene(int index)
     {
-        //ruft CutSceneManager Script auf
         CutSceneManager.InitCutScene(index);
-
-        //if cutscene finished
-        //StoryIndex += 1;
-        //StoryManager.LoadStage();
     }
 
+    /// <summary>
+    /// loads Fight Scene
+    /// </summary>
     public static void InitStage()
     {
-        //ruft fight Script auf, übergibt 2 Spieler (GameObjects)
         SceneManager.LoadScene(2);
     }
-
-    public static void StoryContinue()
-    {
-        //StoryIndex += 1;
-        StoryManager.LoadStage();
-    }
-
 }
