@@ -1585,12 +1585,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 7826886703124515334}
-  resolution: {fileID: 0}
-  screenMode: {fileID: 7826886701862394235}
   settingsObject: {fileID: 6671328697872205338}
   controlsObject: {fileID: 5971552670612047365, guid: b89b1c1a78b3b6e418a5257d716eb47d,
     type: 3}
-  pausemenuObject: {fileID: 4511645610772342538, guid: cb804c4c14322aa409fbe5984065cca2,
+  pauseMenuObject: {fileID: 4511645610772342538, guid: cb804c4c14322aa409fbe5984065cca2,
     type: 3}
 --- !u!1 &7826886702904198232
 GameObject:
