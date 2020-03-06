@@ -12,6 +12,11 @@ public static class StoryManager
     public static bool isStoryMode = false;
 
     /// <summary>
+    /// New static Object AudioManager so we can use it
+    /// </summary>
+    public static AudioManager AudioManager = new AudioManager();
+
+    /// <summary>
     /// New static Object CutSceneManager so we can use it
     /// </summary>
     public static CutSceneManager CutSceneManager = new CutSceneManager();
