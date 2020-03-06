@@ -14,9 +14,12 @@ public class Fightmanager : MonoBehaviour
     [SerializeField] private float passedTime;
     [SerializeField] private Text timerText;
 
+    [SerializeField] private GameObject winScreen;
+    protected int Winner;
+
     protected int Player1Wins;
     protected int Player2Wins;
-    [SerializeField] protected int NeededWins
+    protected int NeededWins
     {
         get
         {
@@ -26,8 +29,6 @@ public class Fightmanager : MonoBehaviour
     }
     protected bool fightFinished;
 
-    protected int Winner;
-    [SerializeField] private GameObject winScreen;
 
     protected virtual void Start()
     {

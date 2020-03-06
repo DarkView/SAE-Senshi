@@ -6,10 +6,14 @@
 /// </summary>
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private Object mainMenu;
-    [SerializeField] private Object settingsMenu;
+    /// <summary>
+    /// 
+    /// </summary>
     public static int menuState = 0;
     public static bool menuExist;
+
+    [SerializeField] private Object mainMenu;
+    [SerializeField] private Object settingsMenu;
 
     private void Start()
     {
