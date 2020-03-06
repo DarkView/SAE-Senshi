@@ -164,6 +164,7 @@ public class CutSceneManager : MonoBehaviour
     private void Start()
     {
         CutsceneTextIndex = 0;
+        Time.timeScale = 1;
     }
 
     /// <summary>
