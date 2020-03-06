@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -65,7 +66,7 @@ public class CutSceneManager : MonoBehaviour
     /// <summary>
     /// bool so we can end the cutscene
     /// </summary>
-    private static bool cutsceneActive = false;
+    public static bool cutsceneActive = false;
 
     /// <summary>
     /// Index to check at which state of the story we are at the moment
@@ -149,6 +150,11 @@ public class CutSceneManager : MonoBehaviour
         {
             storyText = JsonConvert.DeserializeObject<List<string[]>>(File.ReadAllText(CFG_FOLDER + STORY_CFG));
         }
+    }
+
+    private void Start()
+    {
+        CutsceneTextIndex = 0;
     }
 
     /// <summary>
